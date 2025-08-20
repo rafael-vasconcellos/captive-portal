@@ -1,11 +1,11 @@
 {
-  "name": "test2",
+  "name": "captive-portal",
   "version": "1.0.0",
   "description": "",
   "main": "dada.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "concurrently \"node http.js\" \"node dns.js\""
   },
   "keywords": [],
   "author": "",
@@ -16,6 +16,7 @@
     "express": "^5.1.0"
   },
   "devDependencies": {
-    "@types/dns2": "^2.0.9"
+    "@types/dns2": "^2.0.9",
+    "concurrently": "^9.2.0"
   }
 }
