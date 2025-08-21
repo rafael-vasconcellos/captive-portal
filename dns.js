@@ -1,9 +1,11 @@
 const { Packet, createServer } = require('dns2');
 const dns = require('dns')
 const os = require('os')
+const { config } = require('dotenv')
 
 
 
+config()
 const white_list = new Set([ "google.com" ])
 const portal_hostname = "accounts.mynetwork.com"
 
@@ -11,7 +13,7 @@ async function getIP(host, type) {
     if (type === Packet.TYPE.PTR) { return reverseLookup(host).catch(() => ({})) }
     else if (white_list.has(host)) { return await lookup(host).catch(() => ({})) }
     return { 
-        address: "127.0.0.1",
+        address: process.env.MACHINE_IP ?? "127.0.0.1",
         type: Packet.TYPE.A
     }
 }
@@ -140,7 +142,7 @@ const server = createServer({
 server.listen({ 
     udp: { 
       port: 5333,
-      address: "127.0.0.1",
+      address: process.env.MACHINE_IP ?? "127.0.0.1",
       type: "udp4",  // IPv4 or IPv6 (Must be either "udp4" or "udp6")
     },
 });
