@@ -1,3 +1,16 @@
+# Sobre
+
+Pequeno portal cativo (captive portal) para fins de estudo.  
+
+
+## O que é um portal cativo
+
+Quando um dispositivo se conecta a uma rede, os sistemas operacionais fazem requisições para rotas http para testarem a conexão da rede, se detectarem redirecionamentos, concluem que a rede possui um portal cativo.  
+
+## Como funciona um portal cativo
+
+Basicamente, um proxy transparente
+
 ### O que o IP forwarding faz
 
 - Ativar o IP forwarding no Linux (ou outro SO) faz com que a máquina repasse pacotes entre interfaces de rede.
