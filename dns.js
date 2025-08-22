@@ -6,7 +6,7 @@ const { config } = require('dotenv')
 
 
 config()
-const white_list = new Set([ "google.com" ])
+const white_list = new Set([ "google.com", "www.google.com" ])
 const portal_hostname = "accounts.mynetwork.com"
 
 async function getIP(host, type) { 
